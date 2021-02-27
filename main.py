@@ -1,17 +1,18 @@
 import os
 import sys
 import zipfile
-
+import datetime 
 import config
 
+date = datetime.datetime.now()
 
 def backup():
     if count == 0:
-        print("Setup config file \n Add to backup array 'path'")
+        print("Setup config file \nAdd to backup array 'path'")
     else:
         for x in config.backup:
             file_name = os.path.basename(x)
-            backup_path_temp = backup_path + "/" +  file_name + ".zip"
+            backup_path_temp = backup_path + "/" +  file_name + " " + str(date.strftime("%d.%m.%Y"))+ ".zip"
             zipfile.ZipFile(backup_path_temp,mode='w').write(x)
             
 
