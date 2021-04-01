@@ -24,11 +24,3 @@ if config.backup_path == "":
 else:
     backup_path = config.backup_path
     backup()
-
-
-
-
-
-# for file in os.listdir("key/"):
-#         if file.endswith(".key"):
-#             print(file)
